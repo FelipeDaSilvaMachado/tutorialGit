@@ -1,0 +1,71 @@
+# 1. Inicializar o Git no projeto local
+# Navegue até a pasta do seu projeto ou crie uma nova:
+cd /caminho/do/seu/projeto
+
+# Inicialize o Git na pasta do projeto
+git init
+
+# 2. Adicionar os arquivos ao repositório
+# Adicione todos os arquivos do seu projeto ao Git
+git add .
+
+# 3. Criar o primeiro commit
+# Faça um commit inicial com uma mensagem descritiva
+git commit -m "Primeiro commit"
+
+# 4. Criar um repositório no GitHub
+# Você pode fazer isso de duas formas:
+
+## Opção A: Usando GitHub CLI (gh)
+# Se ainda não tiver o GitHub CLI (gh), instale e configure:
+# Para Linux:
+sudo apt install gh
+# Para macOS:
+brew install gh
+# Para Windows:
+choco install gh
+
+# Faça login no GitHub usando o CLI
+gh auth login
+
+# Crie o repositório no GitHub diretamente pelo terminal
+# Substitua "nome-do-repo" pelo nome que você deseja dar ao seu repositório
+gh repo create nome-do-repo --public --source=. --remote=origin
+
+## Opção B: Criando manualmente pelo site do GitHub
+# 1. Acesse https://github.com/ e faça login.
+# 2. No canto superior direito, clique em "+" e selecione "New repository".
+# 3. Dê um nome ao seu repositório, escolha a visibilidade (público ou privado) e clique em "Create repository".
+# 4. Copie a URL do repositório (ex.: https://github.com/usuario/nome-do-repo.git).
+
+# 5. Conectar o repositório local ao repositório remoto
+# Se criou o repositório manualmente, adicione o repositório remoto
+git remote add origin https://github.com/usuario/nome-do-repo.git
+
+# 6. Enviar os arquivos para o GitHub
+# Faça o push dos arquivos para o GitHub
+git push -u origin master
+
+#Local
+# Deixar o git observar os seus arquivos 
+git add . 
+# Empacotar arquivos para envio 
+git commit -m "Nome do commit"
+# Enviar os arquivos 
+git push -u origin main
+
+Configurações 
+
+# Erro no endereço do repositório 
+# Excluír rep cadastrado no pc 
+git remote remove origin 
+#Cadastrar novo rep 
+git remote add origin url 
+
+#Informações do usuário 
+git config --global user.email "email cadastrado no git" 
+git config --global user.name "FelipeDaSilvaMachado"  
+
+
+Clonar repositórios de terceiros 
+git clone urlDoRepositorio

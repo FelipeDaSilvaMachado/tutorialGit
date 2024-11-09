@@ -1,0 +1,62 @@
+
+Para verificar se o seu `git push` foi bem-sucedido pelo terminal, você pode seguir algumas etapas:
+
+1. **Verificar a saída do comando `git push`**:
+Quando você executa `git push`, o terminal exibe uma saída informando se o push foi bem-sucedido. Se tudo correu bem, você verá algo parecido com:
+
+```
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 500 bytes | 500 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+To https://github.com/usuario/repositorio.git
+   abc1234..def5678  branch_name -> branch_name
+```
+
+Isso significa que os commits foram enviados para o repositório remoto com sucesso. O trecho final **"branch_name -> branch_name"** indica que seu código foi enviado para o branch correto no repositório remoto.
+
+2. **Verificar o status do repositório**:
+Após o push, você pode usar o comando `git status` para verificar se o repositório local está sincronizado com o remoto. O comando deve mostrar algo como:
+
+```
+git status
+```
+
+Se tudo estiver atualizado, a mensagem será algo como:
+
+```
+On branch branch_name
+Your branch is up to date with 'origin/branch_name'.
+nothing to commit, working tree clean
+```
+
+3. **Verificar a versão do repositório no GitHub**:
+Você pode usar o comando a seguir para listar os últimos commits no repositório remoto e verificar se o seu commit recente aparece lá:
+
+```
+git log origin/branch_name --oneline
+```
+
+Isso mostra os commits no repositório remoto. Verifique se o commit que você fez e enviou aparece na lista.
+
+4. **Usar `git fetch` para garantir que tudo está sincronizado**:
+Você também pode garantir que o repositório local está sincronizado com o remoto executando:
+
+```
+git fetch
+git status
+```
+
+Se tudo estiver sincronizado, a mensagem será algo como:
+
+```
+Your branch is up to date with 'origin/branch_name'.
+```
+
+Resumo:
+- **Verificar a saída do `git push`**: Acompanhe o que o terminal exibe ao fazer o push.
+- **Usar `git status`**: Verifica se sua branch local está sincronizada com o remoto.
+- **Usar `git log origin/branch_name --oneline`**: Verifica os commits no repositório remoto.
+- **Usar `git fetch` seguido de `git status`**: Para garantir que tudo está sincronizado.

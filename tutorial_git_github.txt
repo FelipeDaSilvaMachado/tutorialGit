@@ -1,0 +1,115 @@
+# Mini Tutorial de Git e GitHub
+
+Este tutorial vai te ajudar a criar, configurar e usar um repositório no GitHub 
+com o Git localmente.
+
+## 1. Criar o Repositório no GitHub
+1. Acesse [GitHub](https://github.com) e faça login.
+2. No canto superior direito, clique no ícone `+` e selecione **New repository**.
+3. Dê um nome ao seu repositório (ex: `meu-projeto`).
+4. Escolha se ele será público ou privado.
+5. (Opcional) Marque a opção **Add a README file** se quiser um arquivo `README.md` 
+automaticamente.
+6. Clique em **Create repository**.
+
+## 2. Configurar o Git Localmente
+
+Agora você precisa **inicializar o Git** no seu projeto local e conectá-lo ao 
+repositório que acabou de criar no GitHub.
+
+### 2.1 Inicializar um novo repositório Git
+No diretório do seu projeto, abra o terminal e execute:
+```bash
+git init
+```
+
+### 2.2 Verificar o status dos arquivos
+Isso te mostrará os arquivos que estão prontos para serem versionados:
+```bash
+git status
+```
+
+### 2.3 Adicionar arquivos ao repositório local
+Adicione todos os arquivos ao repositório local com:
+```bash
+git add .
+```
+
+### 2.4 Fazer o primeiro commit
+Agora, faça o **commit** (registro das alterações):
+```bash
+git commit -m "Primeiro commit"
+```
+
+## 3. Conectar o Repositório Local ao Repositório no GitHub
+
+### 3.1 Conectar ao repositório remoto
+Substitua `<URL-do-repo>` pela URL do seu repositório no GitHub (geralmente aparece assim: `https://github.com/seu-usuario/nome-repositorio.git`):
+```bash
+git remote add origin <URL-do-repo>
+```
+
+### 3.2 Fazer o push para o GitHub
+Agora você pode enviar seu commit local para o GitHub com o comando:
+```bash
+git push -u origin main
+```
+
+Se estiver usando outra branch (por exemplo `master`), troque `main` por `master`.
+
+## 4. Verificar no GitHub
+Agora, quando você for ao GitHub e acessar o repositório, verá que seus arquivos foram enviados corretamente!
+
+## 5. Atualizar o Repositório no Futuro
+Sempre que quiser enviar novas alterações para o repositório no GitHub:
+1. **Adicionar as mudanças:**
+   ```bash
+   git add .
+   ```
+2. **Fazer um commit:**
+   ```bash
+   git commit -m "Descrição das alterações"
+   ```
+3. **Enviar (push) para o GitHub:**
+   ```bash
+   git push
+   ```
+
+## 6. Dicas Úteis:
+
+### 6.1. Clonar um repositório:
+Se você quiser clonar um repositório existente do GitHub para o seu computador, use o comando:
+```bash
+git clone <URL-do-repo>
+```
+
+### 6.2. Verificar histórico de commits:
+Para ver o histórico de commits, use:
+```bash
+git log
+```
+
+### 6.3. Criar e trocar de branch:
+Para criar uma nova branch e trocar para ela:
+```bash
+git checkout -b nome-da-branch
+```
+
+### 6.4. Mesclar branches:
+Para mesclar uma branch com a branch atual:
+```bash
+git merge nome-da-branch
+```
+
+### 6.5. Atualizar o repositório local com as mudanças remotas:
+Use o comando pull para sincronizar seu repositório local com as mudanças remotas:
+```bash
+git pull
+```
+
+Verificar o repositório remoto: O comando abaixo mostra qual repositório remoto está 
+configurado no Git para o projeto local (o repositório no qual você está trabalhando):
+```
+git remote -v
+```
+Agora você está pronto para gerenciar seus projetos com Git e GitHub!
